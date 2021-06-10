@@ -1,0 +1,22 @@
+//- extends layout
+doctype html
+html
+  head
+    style 
+      include ../public/stylesheets/style.css
+      
+    title #{title}
+  body 
+    block content
+      div#header
+        h1= title
+        p Welcome to #{title}
+        a(href="/new")
+          button#btn_add_new Add new message
+      div#data
+        each message in messages
+          .row 
+            h3 Message: #{message.text}
+            p by: #{message.user}
+            p #{message.added}
+    

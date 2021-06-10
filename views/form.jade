@@ -1,0 +1,24 @@
+extends layout
+
+head
+    title Add Message 
+    style 
+      include ../public/stylesheets/style.css
+
+block content 
+    //- h1 Add New Message 
+    form(name="add message", action="/new", method="post")
+        fieldset 
+            legend Add new message
+            .input 
+                input(type="text", name="user", placeholder="Enter username", required)
+                br
+                br
+            .input 
+                input(type="text", name="message", placeholder="Enter Message", required)
+                br
+                br
+            button#btn_submit(type="submit") Add 
+    
+    a(href="/")
+        button#btn_go_back Go Back
